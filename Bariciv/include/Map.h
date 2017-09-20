@@ -14,6 +14,8 @@ class Map
         Tile* mapTiles;
         int width, height;
 
+        bool CoordIsInBounds(int x, int y);
+
     protected:
 
     private:

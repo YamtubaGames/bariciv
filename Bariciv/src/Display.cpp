@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void DisplayDraw(Map OutputMap)
+void DisplayDraw(Map &OutputMap)
 {
     for(int y = 0; y < OutputMap.height; ++y)
     {
