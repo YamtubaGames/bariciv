@@ -29,3 +29,33 @@
 1505861402 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Faction.cpp
 	"Faction.h"
 
+1505918501 source:/home/andrew/bariciv/Bariciv/main.cpp
+	<iostream>
+	<Tile.h>
+	<Map.h>
+	<Display.h>
+
+1505918501 /home/andrew/bariciv/Bariciv/include/Tile.h
+	<Faction.h>
+
+1505918501 /home/andrew/bariciv/Bariciv/include/Faction.h
+
+1505918501 /home/andrew/bariciv/Bariciv/include/Map.h
+	<Tile.h>
+
+1505918501 /home/andrew/bariciv/Bariciv/include/Display.h
+	<Map.h>
+
+1505937350 source:/home/andrew/bariciv/Bariciv/src/commandparser.cpp
+	"commandparser.h"
+	"movecom.h"
+
+1505936597 /home/andrew/bariciv/Bariciv/include/commandparser.h
+	<string>
+	<movecom.h>
+
+1505937597 /home/andrew/bariciv/Bariciv/include/movecom.h
+	<cstring>
+	<string>
+	<iostream>
+
