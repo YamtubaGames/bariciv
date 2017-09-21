@@ -11,7 +11,7 @@ struct Tile
         virtual ~Tile();
 
         char displayCharacter;
-        Faction *parentFaction;
+        Faction parentFaction = Faction(' ');
         unsigned char units = 0;
         unsigned char fortifications = 0;
 

@@ -34,9 +34,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="include/commandparser.h" />
+		<Unit filename="include/Display.h" />
+		<Unit filename="include/Faction.h" />
+		<Unit filename="include/Map.h" />
+		<Unit filename="include/Tile.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/commandparser.cpp" />
+		<Unit filename="src/Display.cpp" />
+		<Unit filename="src/Faction.cpp" />
+		<Unit filename="src/Map.cpp" />
+		<Unit filename="src/Tile.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

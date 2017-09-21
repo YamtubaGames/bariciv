@@ -1,6 +1,7 @@
 #ifndef COMMANDPARSER_H
 #define COMMANDPARSER_H
 #include <string>
+#include <movecom.h>
 
-void commandparser();
+movecom commandparser();
 #endif // COMMANDPARSER_H

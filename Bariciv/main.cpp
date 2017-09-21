@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
     Tile DefaultTile ('X');
-    Map GameMap (3,3,DefaultTile);
+    Map GameMap (24,6,DefaultTile);
 
     //cout << sizeof(DefaultTile) << endl << endl; // Size of a tile object
 

@@ -13,7 +13,7 @@ Tile::Tile(char DisplayCharacter)
 void Tile::init(char DisplayCharacter)
 {
     displayCharacter = DisplayCharacter;
-    parentFaction = new Faction(' '); // Allocate this to the stack instead of the heap?
+    //parentFaction = new Faction(' '); // Allocate this to the stack instead of the heap?
 }
 
 Tile::~Tile()
