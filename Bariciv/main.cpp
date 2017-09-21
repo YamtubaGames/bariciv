@@ -2,6 +2,9 @@
 #include <Tile.h>
 #include <Map.h>
 #include <Display.h>
+#include <movecom.h>
+#include <commandparser.h>
+#include <string>
 
 using namespace std;
 
@@ -16,7 +19,8 @@ int main()
     {
         DisplayDraw(GameMap);
 
-        break; // Wait for input
+        movecom inputCommand = commandparser();
+        break;
     }
 
     return 0;

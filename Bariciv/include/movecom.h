@@ -7,18 +7,22 @@
 struct movecom
 {
     public:
-        movecom();
+        movecom(std::string, int, int);
         virtual ~movecom();
-        std::string gettile() {return tileloc;};
-        std::string getdirect() {return direct;};
-        std::string getnumber() {return number;};
-        void settile(std::string a) {tileloc = a;};
-        void setdirect(std::string a) {direct = a;};
-        void setnumber(std::string a) {number = a;};
+        int getrow() {return row;};
+        int getcolumn() {return column;};
+        int getdirect() {return direct;};
+        int getnumber() {return number;};
+        void setrow(int a) {row = a;};
+        void setcolumn(int a) {column = a;};
+        void setdirect(int a) {direct = a;};
+        void setnumber(int a) {number = a;};
+        void print();
     protected:
-        std::string tileloc;
-        std::string direct;
-        std::string number;
+        int row;
+        int column;
+        int direct;
+        int number;
     private:
 };
 
