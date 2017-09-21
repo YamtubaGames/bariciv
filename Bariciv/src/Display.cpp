@@ -34,13 +34,13 @@ void DisplayDraw(Map &OutputMap)
 
         for(int x = 0; x < OutputMap.width; ++ x)
         {
-            cout << "|" << /*OutputMap.mapTiles[x + (y * OutputMap.width)].units*/ "0" << OutputMap.mapTiles[x + (y * OutputMap.width)].parentFaction.symbol;
+            cout << "|" << OutputMap.mapTiles[x + (y * OutputMap.width)].getUnits() << OutputMap.mapTiles[x + (y * OutputMap.width)].parentFaction.symbol;
         }
         cout << "|" << endl;
 
         for(int x = 0; x < OutputMap.width; ++ x)
         {
-            cout << "|" << OutputMap.mapTiles[x + (y * OutputMap.width)].displayCharacter << /*OutputMap.mapTiles[x + (y * OutputMap.width)].fortifications*/ "0";
+            cout << "|" << OutputMap.mapTiles[x + (y * OutputMap.width)].displayCharacter << OutputMap.mapTiles[x + (y * OutputMap.width)].getFortifications();
         }
         cout << "|" << endl;
 

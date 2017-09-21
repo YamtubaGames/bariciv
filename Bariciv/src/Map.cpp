@@ -34,6 +34,41 @@ bool Map::CoordIsInBounds(int x, int y)
     return true;
 }
 
+bool Map::Move(Faction Player, int x, int y, int dir, int units)
+{
+    if(!CoordIsInBounds(x, y))
+        return false;
+
+    int xN = x, yN = y;
+
+    switch(dir)
+    {
+        case 0:
+            --yN;
+            break;
+        case 1:
+            ++xN;
+            break;
+        case 2:
+            ++yN;
+            break;
+        case 3:
+            --xN;
+            break;
+        default:
+            return false;
+    }
+
+    if(!CoordIsInBounds(xN, yN))
+        return false;
+
+    // Calculate results
+    Tile *fromTile = &mapTiles[x + (y * width)];
+    Tile *toTile = &mapTiles[xN + (yN * width)];
+
+    return true;
+}
+
 Map::~Map()
 {
     delete [] mapTiles;
