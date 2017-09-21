@@ -15,6 +15,7 @@ class Map
         int width, height;
 
         bool CoordIsInBounds(int x, int y);
+        bool Move(Faction Player, int x, int y, int dir, int units);
 
     protected:
 
