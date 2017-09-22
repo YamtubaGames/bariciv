@@ -11,7 +11,7 @@ struct Tile
         virtual ~Tile();
 
         char displayCharacter;
-        Faction parentFaction = Faction('F');
+        Faction parentFaction = Faction('U');
 
         int getUnits() {return units;};
         int getFortifications() {return fortifications;};

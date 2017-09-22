@@ -12,6 +12,7 @@ int main()
 {
     Tile DefaultTile ('X');
     Map GameMap (24,6,DefaultTile);
+    Faction DefaultFaction ('F');
 
     //cout << sizeof(DefaultTile) << endl << endl; // Size of a tile object
 
@@ -19,8 +20,21 @@ int main()
     {
         DisplayDraw(GameMap);
 
-        movecom inputCommand = commandparser();
-        break;
+        while(true)
+        {
+            cout << "> ";
+
+            movecom inputCommand = commandparser();
+
+            if(GameMap.Move(DefaultFaction, inputCommand))
+            {
+                break;
+            }
+            else
+            {
+                cout << "Invalid move!" << endl;
+            }
+        }
     }
 
     return 0;

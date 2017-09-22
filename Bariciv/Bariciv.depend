@@ -1,27 +1,31 @@
 # depslib dependency file v1.0
-1505876845 source:/home/user/Documents/Projects/bariciv/Bariciv/main.cpp
+1506096857 source:/home/user/Documents/Projects/bariciv/Bariciv/main.cpp
 	<iostream>
 	<Tile.h>
 	<Map.h>
 	<Display.h>
+	<movecom.h>
+	<commandparser.h>
+	<string>
 
-1505912274 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Display.cpp
+1506020631 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Display.cpp
 	"Display.h"
 	<iostream>
 
 1505912274 /home/user/Documents/Projects/bariciv/Bariciv/include/Display.h
 	<Map.h>
 
-1505876410 /home/user/Documents/Projects/bariciv/Bariciv/include/Map.h
+1506039335 /home/user/Documents/Projects/bariciv/Bariciv/include/Map.h
 	<Tile.h>
+	<movecom.h>
 
-1505912442 /home/user/Documents/Projects/bariciv/Bariciv/include/Tile.h
+1506039847 /home/user/Documents/Projects/bariciv/Bariciv/include/Tile.h
 	<Faction.h>
 
-1505912377 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Map.cpp
+1506096726 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Map.cpp
 	"Map.h"
 
-1505876642 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Tile.cpp
+1505952040 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Tile.cpp
 	"Tile.h"
 
 1505866815 /home/user/Documents/Projects/bariciv/Bariciv/include/Faction.h
@@ -76,4 +80,19 @@
 
 1506013408 source:/home/andrew/bariciv/Bariciv/src/Tile.cpp
 	"Tile.h"
+
+1506039092 /home/user/Documents/Projects/bariciv/Bariciv/include/movecom.h
+	<cstring>
+	<string>
+	<iostream>
+
+1505956131 /home/user/Documents/Projects/bariciv/Bariciv/include/commandparser.h
+	<string>
+	<movecom.h>
+
+1506039092 source:/home/user/Documents/Projects/bariciv/Bariciv/src/commandparser.cpp
+	"commandparser.h"
+
+1506039092 source:/home/user/Documents/Projects/bariciv/Bariciv/src/movecom.cpp
+	"movecom.h"
 

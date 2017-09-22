@@ -2,6 +2,7 @@
 #define MAP_H
 
 #include <Tile.h>
+#include <movecom.h>
 
 class Map
 {
@@ -16,6 +17,7 @@ class Map
 
         bool CoordIsInBounds(int x, int y);
         bool Move(Faction Player, int x, int y, int dir, int units);
+        bool Move(Faction Player, movecom Command);
 
     protected:
 

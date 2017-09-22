@@ -1,5 +1,4 @@
 #include "Map.h"
-//#include <cstring>
 
 Map::Map(int width, int height, Tile defaultTile)
 {
@@ -20,8 +19,6 @@ void Map::Fill(Tile TileToFill)
     {
         for(int y = 0; y < height; ++ y)
         {
-            //mapTiles[x + (y * width)].displayCharacter = TileToFill.displayCharacter;
-            //std::memcpy(&mapTiles[x + (y * width)], &TileToFill, sizeof(TileToFill));
             mapTiles[x + (y * width)] = TileToFill;
         }
     }
@@ -67,6 +64,11 @@ bool Map::Move(Faction Player, int x, int y, int dir, int units)
     Tile *toTile = &mapTiles[xN + (yN * width)];
 
     return true;
+}
+
+bool Map::Move(Faction Player, movecom Command)
+{
+    return Move(Player, Command.getcolumn(), Command.getrow(), Command.getdirect(), Command.getnumber());
 }
 
 Map::~Map()
