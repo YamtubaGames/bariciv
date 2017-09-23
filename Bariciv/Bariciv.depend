@@ -1,12 +1,13 @@
 # depslib dependency file v1.0
-1506196572 source:/home/user/Documents/Projects/bariciv/Bariciv/main.cpp
+1506207038 source:/home/user/Documents/Projects/bariciv/Bariciv/main.cpp
 	<iostream>
+	<string>
 	<Tile.h>
 	<Map.h>
 	<Display.h>
 	<movecom.h>
 	<commandparser.h>
-	<string>
+	<ConsoleUI.h>
 
 1506020631 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Display.cpp
 	"Display.h"
@@ -21,7 +22,7 @@
 	<random>
 	<Combat.h>
 
-1506039847 /home/user/Documents/Projects/bariciv/Bariciv/include/Tile.h
+1506201854 /home/user/Documents/Projects/bariciv/Bariciv/include/Tile.h
 	<Faction.h>
 
 1506119766 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Map.cpp
@@ -88,17 +89,19 @@
 	<string>
 	<iostream>
 
-1505956131 /home/user/Documents/Projects/bariciv/Bariciv/include/commandparser.h
+1506207061 /home/user/Documents/Projects/bariciv/Bariciv/include/commandparser.h
 	<string>
+	<sstream>
+	<istream>
 	<movecom.h>
 
-1506039092 source:/home/user/Documents/Projects/bariciv/Bariciv/src/commandparser.cpp
+1506207025 source:/home/user/Documents/Projects/bariciv/Bariciv/src/commandparser.cpp
 	"commandparser.h"
 
 1506039092 source:/home/user/Documents/Projects/bariciv/Bariciv/src/movecom.cpp
 	"movecom.h"
 
-1506196891 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Combat.cpp
+1506203583 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Combat.cpp
 	"Combat.h"
 
 1506196347 /home/user/Documents/Projects/bariciv/Bariciv/include/Combat.h
@@ -110,4 +113,11 @@
 
 1506114056 /home/user/Documents/Projects/bariciv/Bariciv/include/Random.h
 	<random>
+
+1506207255 /home/user/Documents/Projects/bariciv/Bariciv/include/ConsoleUI.h
+	<string>
+	<iostream>
+
+1506203049 source:/home/user/Documents/Projects/bariciv/Bariciv/src/ConsoleUI.cpp
+	"ConsoleUI.h"
 

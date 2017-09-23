@@ -36,21 +36,23 @@ void Combat(Tile &FromTile, Tile &ToTile, int numberSent, double randomA, double
 
     const double fortificationCoefficient = 0.1d;
 
-    defenderCount *= fortificationCoefficient;
+    double fortificationBonus = 1.0d + (fortifications * fortificationCoefficient);
+
+    double defenderCountEffective = defenderCount * fortificationBonus;
 
     bool moreAttackers;
 
     int difference;
 
-    if(attackerCount > defenderCount)
+    if(attackerCount > defenderCountEffective)
     {
         moreAttackers = true;
-        difference = attackerCount - defenderCount;
+        difference = attackerCount - defenderCountEffective;
     }
     else
     {
         moreAttackers = false;
-        difference = defenderCount - attackerCount;
+        difference = defenderCountEffective - attackerCount;
     }
 
     ++difference;

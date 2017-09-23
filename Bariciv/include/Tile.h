@@ -16,7 +16,7 @@ struct Tile
         int getUnits() {return units;};
         int getFortifications() {return fortifications;};
         bool setUnits(int Number) {if(Number >= 0 && Number <= 9) {units = Number; return true;} else {return false;}};
-        bool setFortifications(int Number) {if(Number >= 0 && Number <= 9) {units = Number; return true;} else {return false;}};
+        bool setFortifications(int Number) {if(Number >= 0 && Number <= 9) {fortifications = Number; return true;} else {return false;}};
 
     private:
         void init(char DisplayCharacter);

@@ -1,10 +1,12 @@
 #include <iostream>
+#include <string>
+
 #include <Tile.h>
 #include <Map.h>
 #include <Display.h>
 #include <movecom.h>
 #include <commandparser.h>
-#include <string>
+#include <ConsoleUI.h>
 
 using namespace std;
 
@@ -13,11 +15,13 @@ int main()
     Tile DefaultTile ('X');
     Map GameMap (24,6,DefaultTile);
     Faction DefaultFaction ('F');
+    ConsoleUI Console;
 
     GameMap.mapTiles[2 + (2 * 24)].setUnits(8);
     GameMap.mapTiles[2 + (2 * 24)].parentFaction.symbol = 'F';
     GameMap.mapTiles[3 + (4 * 24)].setUnits(3);
     GameMap.mapTiles[3 + (4 * 24)].parentFaction.symbol = 'Q';
+    GameMap.mapTiles[3 + (4 * 24)].setFortifications(9);
 
     //cout << sizeof(DefaultTile) << endl << endl; // Size of a tile object
 
@@ -27,9 +31,7 @@ int main()
 
         while(true)
         {
-            cout << "> ";
-
-            movecom inputCommand = commandparser();
+            movecom inputCommand = commandparserString(Console.Prompt());
 
             if(GameMap.Move(DefaultFaction, inputCommand))
             {
@@ -37,7 +39,7 @@ int main()
             }
             else
             {
-                cout << "Invalid move!" << endl;
+                Console.Message("Invalid move!");
             }
         }
     }
