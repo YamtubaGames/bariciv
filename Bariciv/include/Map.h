@@ -3,6 +3,8 @@
 
 #include <Tile.h>
 #include <movecom.h>
+#include <random>
+#include <Combat.h>
 
 class Map
 {
@@ -22,6 +24,11 @@ class Map
     protected:
 
     private:
+    std::mt19937 rng;
+    std::uniform_real_distribution<double> distribution;
+
+    void initCustomRandom();
+    double getCustomRandomDouble();
 };
 
 #endif // MAP_H

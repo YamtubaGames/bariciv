@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1506096857 source:/home/user/Documents/Projects/bariciv/Bariciv/main.cpp
+1506196572 source:/home/user/Documents/Projects/bariciv/Bariciv/main.cpp
 	<iostream>
 	<Tile.h>
 	<Map.h>
@@ -15,14 +15,16 @@
 1505912274 /home/user/Documents/Projects/bariciv/Bariciv/include/Display.h
 	<Map.h>
 
-1506039335 /home/user/Documents/Projects/bariciv/Bariciv/include/Map.h
+1506196033 /home/user/Documents/Projects/bariciv/Bariciv/include/Map.h
 	<Tile.h>
 	<movecom.h>
+	<random>
+	<Combat.h>
 
 1506039847 /home/user/Documents/Projects/bariciv/Bariciv/include/Tile.h
 	<Faction.h>
 
-1506096726 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Map.cpp
+1506119766 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Map.cpp
 	"Map.h"
 
 1505952040 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Tile.cpp
@@ -95,4 +97,17 @@
 
 1506039092 source:/home/user/Documents/Projects/bariciv/Bariciv/src/movecom.cpp
 	"movecom.h"
+
+1506196891 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Combat.cpp
+	"Combat.h"
+
+1506196347 /home/user/Documents/Projects/bariciv/Bariciv/include/Combat.h
+	<Tile.h>
+	<cmath>
+
+1506114085 source:/home/user/Documents/Projects/bariciv/Bariciv/src/Random.cpp
+	"Random.h"
+
+1506114056 /home/user/Documents/Projects/bariciv/Bariciv/include/Random.h
+	<random>
 

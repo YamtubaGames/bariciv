@@ -11,6 +11,8 @@ Map::Map(int width, int height, Tile defaultTile)
     mapTiles = new Tile[width * height];
 
     Fill(defaultTile);
+
+    initCustomRandom();
 }
 
 void Map::Fill(Tile TileToFill)
@@ -60,8 +62,13 @@ bool Map::Move(Faction Player, int x, int y, int dir, int units)
         return false;
 
     // Calculate results
-    Tile *fromTile = &mapTiles[x + (y * width)];
-    Tile *toTile = &mapTiles[xN + (yN * width)];
+    /*Tile *fromTile = mapTiles[x + (y * width)];
+    Tile *toTile = mapTiles[xN + (yN * width)];
+
+    if(fromTile.parentFaction.symbol != Player.symbol)
+        return false;
+*/
+    Combat(mapTiles[x + (y * width)], mapTiles[xN + (yN * width)], units, getCustomRandomDouble(), getCustomRandomDouble());
 
     return true;
 }
@@ -69,6 +76,16 @@ bool Map::Move(Faction Player, int x, int y, int dir, int units)
 bool Map::Move(Faction Player, movecom Command)
 {
     return Move(Player, Command.getcolumn(), Command.getrow(), Command.getdirect(), Command.getnumber());
+}
+
+void Map::initCustomRandom(){
+    distribution = std::uniform_real_distribution<double>(0.0,1.0);
+    rng.seed(std::random_device()());
+}
+
+double Map::getCustomRandomDouble()
+{
+    return distribution(rng);
 }
 
 Map::~Map()
