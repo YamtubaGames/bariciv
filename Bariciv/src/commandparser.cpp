@@ -3,8 +3,8 @@
 movecom commandparser(std::istream &inputStream){
     std::string tile;
     int direct, number;
-    inputStream >> tile >> direct >> number;
-    movecom a(tile, direct, number);
+    inputStream >> tile >> number >> direct;
+    movecom a(tile, number, direct);
     return a;
 }
 

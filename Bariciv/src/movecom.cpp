@@ -1,7 +1,7 @@
 #include "movecom.h"
 using namespace std;
 
-movecom::movecom(std::string tile, int direction, int numberof)
+movecom::movecom(std::string tile, int numberof, int direction)
 {
     direct = direction;
     number = numberof;
