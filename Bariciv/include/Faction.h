@@ -6,6 +6,7 @@ class Faction
 {
     public:
         Faction(char Symbol);
+        Faction();
         virtual ~Faction();
 
         char symbol;

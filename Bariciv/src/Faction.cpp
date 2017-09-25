@@ -5,6 +5,11 @@ Faction::Faction(char Symbol)
     symbol = Symbol;
 }
 
+Faction::Faction()
+{
+
+}
+
 Faction::~Faction()
 {
     //dtor
