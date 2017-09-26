@@ -21,6 +21,8 @@ class Map
         bool Move(Faction Player, int x, int y, int dir, int units);
         bool Move(Faction Player, movecom Command);
 
+        Tile& GetTile(int x, int y);
+
     protected:
 
     private:

@@ -23,7 +23,7 @@ void Combat(Tile &FromTile, Tile &ToTile, int numberSent, double randomA, double
     if(ToTile.getUnits() == 0)
     {
         FromTile.setUnits(troopsLeft);
-        ToTile.setUnits(ToTile.getUnits() + (int)attackerCount);
+        ToTile.setUnits((int)attackerCount);
         ToTile.parentFaction.symbol = FromTile.parentFaction.symbol;
         return;
     }
@@ -35,37 +35,36 @@ void Combat(Tile &FromTile, Tile &ToTile, int numberSent, double randomA, double
     double smallerLuck = (randomB * 0.5d);
 
     const double fortificationCoefficient = 0.1d;
-
-    double fortificationBonus = 1.0d + (fortifications * fortificationCoefficient);
-
-    double defenderCountEffective = defenderCount * fortificationBonus;
+    double fortificationBonus = 0.5d * (fortifications * fortificationCoefficient);
 
     bool moreAttackers;
 
-    int difference;
+    double difference;
 
-    if(attackerCount > defenderCountEffective)
+    if(attackerCount > defenderCount)
     {
         moreAttackers = true;
-        difference = attackerCount - defenderCountEffective;
+        difference = attackerCount - defenderCount;
     }
     else
     {
         moreAttackers = false;
-        difference = defenderCountEffective - attackerCount;
+        difference = defenderCount - attackerCount;
     }
 
     ++difference;
 
     if(moreAttackers)
     {
-        attackerCount -= biggerLuck * difference;
-        defenderCount -= smallerLuck * difference;
+        attackerCount -= smallerLuck * difference;
+        double defenderLosses = biggerLuck * difference;
+        defenderCount -= defenderLosses - (defenderLosses * fortificationBonus);
     }
     else
     {
-        attackerCount -= smallerLuck * difference;
-        defenderCount -= biggerLuck * difference;
+        attackerCount -= biggerLuck * difference;
+        double defenderLosses = smallerLuck * difference;
+        defenderCount -= defenderLosses - (defenderLosses * fortificationBonus);
     }
 
     int attackerOut = (int)attackerCount;

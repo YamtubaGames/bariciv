@@ -13,33 +13,45 @@ using namespace std;
 int main()
 {
     Tile DefaultTile ('X');
-    Map GameMap (24,6,DefaultTile);
+    Map GameMap (5,4,DefaultTile);
     Faction DefaultFaction ('F');
     ConsoleUI Console;
 
-    GameMap.mapTiles[2 + (2 * 24)].setUnits(8);
-    GameMap.mapTiles[2 + (2 * 24)].parentFaction.symbol = 'F';
-    GameMap.mapTiles[3 + (4 * 24)].setUnits(3);
-    GameMap.mapTiles[3 + (4 * 24)].parentFaction.symbol = 'Q';
-    GameMap.mapTiles[3 + (4 * 24)].setFortifications(9);
+    GameMap.GetTile(1, 1).setUnits(8);
+    GameMap.GetTile(1, 1).parentFaction.symbol = 'F';
+    GameMap.GetTile(1, 1).setFortifications(4);
+    GameMap.GetTile(3, 2).setUnits(8);
+    GameMap.GetTile(3, 2).parentFaction.symbol = 'Q';
+    GameMap.GetTile(3, 2).setFortifications(4);
 
     //cout << sizeof(DefaultTile) << endl << endl; // Size of a tile object
 
+    char players [] = { 'F', 'Q' };
+
+    const int length = 2;
+
     while(true) // Game loop
     {
-        DisplayDraw(GameMap);
-
-        while(true)
+        for(int i = 0; i < length; ++i)
         {
-            movecom inputCommand = commandparserString(Console.Prompt());
+            DisplayDraw(GameMap);
 
-            if(GameMap.Move(DefaultFaction, inputCommand))
+            while(true)
             {
-                break;
-            }
-            else
-            {
-                Console.Message("Invalid move!");
+                DefaultFaction.symbol = players[i];
+
+                string playerString = string({DefaultFaction.symbol});
+
+                movecom inputCommand = commandparserString(Console.Prompt(playerString));
+
+                if(GameMap.Move(DefaultFaction, inputCommand))
+                {
+                    break;
+                }
+                else
+                {
+                    Console.Message("Invalid move!");
+                }
             }
         }
     }

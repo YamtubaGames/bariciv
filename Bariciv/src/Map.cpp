@@ -35,6 +35,9 @@ bool Map::CoordIsInBounds(int x, int y)
 
 bool Map::Move(Faction Player, int x, int y, int dir, int units)
 {
+    if(!units)
+        return false;
+
     if(!CoordIsInBounds(x, y))
         return false;
 
@@ -64,10 +67,10 @@ bool Map::Move(Faction Player, int x, int y, int dir, int units)
     // Calculate results
     /*Tile *fromTile = mapTiles[x + (y * width)];
     Tile *toTile = mapTiles[xN + (yN * width)];
-
-    if(fromTile.parentFaction.symbol != Player.symbol)
-        return false;
 */
+    if(mapTiles[x + (y * width)].parentFaction.symbol != Player.symbol || mapTiles[x + (y * width)].getUnits() == 0)
+        return false;
+
     Combat(mapTiles[x + (y * width)], mapTiles[xN + (yN * width)], units, getCustomRandomDouble(), getCustomRandomDouble());
 
     return true;
@@ -76,6 +79,11 @@ bool Map::Move(Faction Player, int x, int y, int dir, int units)
 bool Map::Move(Faction Player, movecom Command)
 {
     return Move(Player, Command.getcolumn(), Command.getrow(), Command.getdirect(), Command.getnumber());
+}
+
+Tile& Map::GetTile(int x, int y)
+{
+    return mapTiles[x + (y * width)];
 }
 
 void Map::initCustomRandom(){
